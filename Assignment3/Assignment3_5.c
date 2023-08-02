@@ -1,0 +1,65 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Problem Statement 5 : Write a pogram which accept number from user and return difference
+//                          between summation of all its factors and non factors. 
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Function Name     :   FactDiff
+//    Input             :   integer
+//    Output            :   integer
+//    Description       :   Display summation of non factors and factors
+//    Author            :   Pranavi Ghanshyaam Baraskar
+//    Date              :   04.5.2023
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int FactDiff(int iNo)
+{
+   int iCnt1 = 0, iCnt2 = 0; 
+   int iSum1 = 0, iSum2 = 0;
+   int iResult = 0;
+
+   for(iCnt1 = 1; iCnt1 <= (iNo/2); iCnt1++)
+   {
+      if((iNo % iCnt1) == 0)
+      {
+         iSum1 = iSum1 + iCnt1;
+      }
+      
+   }
+
+   for(iCnt2 = 1; iCnt2 <= iNo; iCnt2++)
+   {
+      if((iNo % iCnt2) != 0)
+      {
+         iSum2 = iSum2 + iCnt2;
+      }
+   }
+   iResult = iSum1 - iSum2;
+   return iResult;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Enter Point Function
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+   int iValue = 0;
+   int iRet = 0;
+
+   printf("Enter Number : \n");
+   scanf("%d",&iValue);
+
+   iRet = FactDiff(iValue);
+
+   printf("Difference between Summation of all Factors and Non Factors is : %d\n",iRet);
+
+}
