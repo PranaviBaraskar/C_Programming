@@ -1,0 +1,75 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Problem Statements 2 : Write a program which accept number from user and 
+//                         check whether it contain 0 in it or not.
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Function Name     :   CheckZero
+//    Input             :   integer
+//    Output            :   Boolean(true/false)
+//    Description       :   check if number contains zero or not
+//    Author            :   Pranavi Ghanshyaam Baraskar
+//    Date              :   10.5.2023
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int BOOL;
+
+BOOL CheckZero(int iNo)
+{
+   int iDigit = 0;
+
+   while(iNo != 0)
+   {
+      iDigit = iNo % 10;
+      if(iDigit == 0)
+      {
+         break;
+      }
+      iNo = iNo / 10;
+   }
+
+   if(iDigit == 0)
+   {
+      return TRUE;
+   }
+   else
+   {
+      return FALSE;
+   }
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Enter Point Function
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+   int iValue = 0;
+   BOOL bRet = FALSE;
+
+   printf("Enter Number : \n");
+   scanf("%d",&iValue);
+
+   bRet = CheckZero(iValue);
+
+   if(bRet == TRUE)
+   {
+      printf("%d contains Zero value in it\n",iValue);
+   }
+   else
+   {
+      printf("%d not contains Zero value in it\n",iValue);
+   }
+   return 0;
+}
