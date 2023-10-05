@@ -1,0 +1,69 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Problem Statement  :  Write a program which accept string from user and return difference between frewquence
+//                          of capital characters.
+//                                              
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Function Name     :   Difference
+//    Input             :   String
+//    Output            :   integer
+//    Description       :   display different between frequency
+//    Author            :   Pranavi Ghanshyaam Baraskar
+//    Date              :  
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int Difference(char *str)
+{
+   int iCnt = 0;
+   int iCnt1 = 0;
+   int iFrequency = 0;
+
+   while(*str != '\0')
+   {
+      if((*str >= 'a') && (*str <= 'z'))
+      { 
+         iCnt++;
+      }
+      str++;
+   }
+
+   while(*str != '\0')
+   {
+      if((*str >= 'A') && (*str <= 'Z'))
+      { 
+         iCnt1++;
+      }
+      str++;
+   }
+
+   iFrequency = iCnt - iCnt1;
+
+   return iFrequency;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Enter Point Function
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+   char Arr[20];
+   int iRet = 0;
+   
+   printf("Enter the String :\n");
+   scanf("%[^'\n']s",Arr);
+
+   iRet = Difference(Arr);
+
+   printf("Frequency of small and capital letters  : %d\n",iRet);
+
+   return 0;
+}
