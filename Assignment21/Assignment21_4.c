@@ -1,0 +1,65 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Problem Statement  :  Accept character from user and check whether it is special symbol or not (!,@,#,$,%,^,&,*)
+//                                              
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#include<stdio.h>
+
+#define TRUE 1
+#define FALSE 0
+
+typedef int BOOL;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//    Function Name     :   CheckSpecial
+//    Input             :   Character
+//    Output            :   boolean(True/False)
+//    Description       :   display if its is special symbol or not
+//    Author            :   Pranavi Ghanshyaam Baraskar
+//    Date              :  
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+BOOL CheckSpecial(char ch)
+{
+   BOOL bFlag = FALSE;
+   char cTemp = ch;
+
+   if((ch >= '!') && (ch <= '/') || (ch >= ':') && (ch <= '@') || (ch >= '[') && (ch <= '`'))
+   {
+      bFlag = TRUE;
+   }
+
+   return bFlag;
+   
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+//     Enter Point Function
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+int main()
+{
+   char cValue = '\0';
+   BOOL bRet = FALSE;
+   
+   printf("Enter the character :\n");
+   scanf("%c",&cValue);
+
+   bRet = CheckSpecial(cValue);
+
+   if(bRet == TRUE)
+   {
+      printf("%c is a special symbol\n",cValue);
+   }
+   else
+   {
+      printf("%c is not a special symbol\n",cValue);
+   }
+
+   return 0;
+}
